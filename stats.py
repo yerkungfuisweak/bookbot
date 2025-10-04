@@ -19,4 +19,5 @@ def get_char_count(characters):
     
     # Print each character and its count
     for char, count in sorted_chars:
+        print(f"'{char}': {count}")
         print(f"The '{char}' character was found {count} times")

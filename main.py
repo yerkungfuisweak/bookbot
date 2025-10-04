@@ -1,3 +1,4 @@
+from stats import get_num_words
 def main():
     # Open the file within a context manager to ensure it's properly closed after reading
     with open("books/frankenstein.txt") as f:
@@ -13,20 +14,8 @@ def main():
         # Print the number of words found in the document
         print(f"Found {len(words)} total words found in the document\n")
         
-        # Initialize an empty dictionary to hold character counts
-        characters = {}
-        
-        # Iterate over each character in the file, converted to lowercase
-        for char in file_contents.lower():
-            # Check if the character is an alphabet letter
-            if char.isalpha():
-                # If the character is not yet in the dictionary, add it with a count of 1
-                if char not in characters:
-                    characters[char] = 1
-                # If it is already in the dictionary, increment its count
-                else:
-                    characters[char] += 1
-        
+        characters = get_num_words(file_contents)
+
         # Sort characters by their counts in descending order and convert to a list of tuples
         sorted_chars = sorted(characters.items(), key=lambda x: x[1], reverse=True)
         

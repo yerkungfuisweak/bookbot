@@ -11,7 +11,7 @@ def main():
         words = file_contents.split()
         
         # Print the number of words found in the document
-        print(len(words), 'total words found in the document\n')
+        print(f"Found {len(words)} total words found in the document\n")
         
         # Initialize an empty dictionary to hold character counts
         characters = {}

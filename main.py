@@ -1,4 +1,4 @@
-from stats import get_num_words
+from stats import get_num_words, get_char_count
 def main():
     # Open the file within a context manager to ensure it's properly closed after reading
     with open("books/frankenstein.txt") as f:
@@ -15,13 +15,7 @@ def main():
         print(f"Found {len(words)} total words found in the document\n")
         
         characters = get_num_words(file_contents)
-
-        # Sort characters by their counts in descending order and convert to a list of tuples
-        sorted_chars = sorted(characters.items(), key=lambda x: x[1], reverse=True)
-        
-        # Print each character and its count
-        for char, count in sorted_chars:
-            print(f"The '{char}' character was found {count} times")
+        get_char_count(characters)
     
     # Print the footer for the report
     print('--- End report ---')

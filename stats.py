@@ -12,3 +12,11 @@ def get_num_words(file_contents):
             else:
                 characters[char] += 1
     return characters
+
+def get_char_count(characters):
+    # Sort characters by their counts in descending order and convert to a list of tuples
+    sorted_chars = sorted(characters.items(), key=lambda x: x[1], reverse=True)
+    
+    # Print each character and its count
+    for char, count in sorted_chars:
+        print(f"The '{char}' character was found {count} times")

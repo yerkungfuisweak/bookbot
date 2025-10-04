@@ -36,6 +36,7 @@ def main():
     
     # Print the footer for the report
     print('--- End report ---')
+    print("greetings boots")
     
 if __name__ == "__main__":    
     main()
